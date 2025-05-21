@@ -10,7 +10,14 @@
           <a href="mailto:rojasoroscoserapio@gmail.com">rojasoroscoserapio@gmail.com</a>
         </p>
       </div>
-  
+
+      <div class="footer-social">
+        <span>Sígueme: </span>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">🐦</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
+      </div>
+
       <div class="footer-copy">
         <p>© 2025 Aprendo 3L. Todos los derechos reservados.</p>
       </div>
@@ -56,6 +63,20 @@
   .footer-contacto a:hover {
     color: #d1fae5;
   }
+
+  .footer-social {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+  .footer-social a {
+    margin: 0 0.3rem;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .footer-social a:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+  }
   
   .footer-copy {
     font-size: 0.85rem;
@@ -63,4 +84,3 @@
     margin-top: 1rem;
   }
   </style>
-  
