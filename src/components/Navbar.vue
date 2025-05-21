@@ -22,11 +22,31 @@
           <RouterLink to="/contactos">📞 Contactos</RouterLink>
         </li>
       </ul>
+      <button class="dark-mode-btn" @click="toggleDarkMode" :aria-pressed="isDarkMode" :title="isDarkMode ? 'Modo claro' : 'Modo oscuro'">
+        <span v-if="isDarkMode">🌙</span>
+        <span v-else>☀️</span>
+      </button>
     </nav>
   </template>
   
   <script setup>
   import { RouterLink } from 'vue-router'
+  import { ref, onMounted } from 'vue'
+  
+  const isDarkMode = ref(false)
+  
+  const toggleDarkMode = () => {
+    isDarkMode.value = !isDarkMode.value
+    document.body.classList.toggle('dark-mode', isDarkMode.value)
+  }
+  
+  // Mantener el modo al recargar
+  onMounted(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      isDarkMode.value = true
+      document.body.classList.add('dark-mode')
+    }
+  })
   </script>
   
   <style scoped>
@@ -84,5 +104,32 @@
   .nav-links a:hover::after {
     width: 100%;
   }
+  
+  .dark-mode-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    color: white;
+    transition: transform 0.2s;
+  }
+  .dark-mode-btn:hover {
+    transform: scale(1.2);
+  }
   </style>
   
+  <style>
+  /* Estilos globales para modo oscuro */
+  body.dark-mode {
+    background: #18181b !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-mode .navbar {
+    background: linear-gradient(to right, #334155, #0f766e) !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-mode .nav-links a {
+    color: #f1f5f9 !important;
+  }
+  </style>
