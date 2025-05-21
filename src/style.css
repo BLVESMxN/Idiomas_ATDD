@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+  --color-bg: #fffefc;
+  --color-lines: #e6e8ec;
+  --color-primary: #3b82f6;
+  --color-secondary: #f59e0b;
+  --color-card: #ffffff;
+  --color-text: #1e293b;
+  --color-accent: #10b981;
+
+  font-family: 'Comic Neue', cursive, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  background-image: linear-gradient(var(--color-lines) 1px, transparent 1px);
+  background-size: 100% 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 1rem 0 0.5rem;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+/* Tarjetas */
+.card {
+  background-color: var(--color-card);
+  border: 2px dashed var(--color-secondary);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+/* Botones */
+button {
+  border: none;
+  border-radius: 14px;
+  padding: 0.8em 1.5em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: white;
+  background-color: var(--color-accent);
+  box-shadow: 0 4px 0 #0f766e;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 0.5rem; /* 🔧 Espaciado uniforme entre botones */
+  min-width: 140px; /* 📐 Ancho mínimo para evitar botones irregulares */
+}
+
+button:hover {
+  background-color: #059669;
+  transform: scale(1.03);
+}
+
+button:disabled {
+  background-color: #cbd5e1;
+  color: #64748b;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Agrupador de botones horizontal con espaciado */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem; /* Espacio entre botones */
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Imagen educativa */
+img {
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    font-size: 15px;
+  }
+  .btn-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
