@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen bg-pattern text-center text-slate-800 pt-20 px-4">
-      <!-- Título principal -->
+      <!-- Título principal Idiomas -->
       <h1 class="main-title">🌐 Idiomas en la Plataforma</h1>
       <p class="mb-10 text-lg max-w-3xl mx-auto font-medium">
         Nuestra aplicación educativa está diseñada para fomentar el aprendizaje temprano en tres idiomas clave:
