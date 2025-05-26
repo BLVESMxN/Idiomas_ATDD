@@ -1,6 +1,5 @@
 <template>
   <div class="bg-pattern min-h-screen text-center text-slate-800 pt-20">
-    <!-- HERO PRINCIPAL -->
     <section id="inicio" class="py-12 px-4">
       <h1 class="main-title">🌟 Bienvenido a Aprendo Jugando 3L</h1>
       <p class="mb-6 text-lg max-w-3xl mx-auto text-slate-700 font-semibold">
@@ -10,7 +9,6 @@
            class="mx-auto rounded-3xl shadow-lg max-w-2xl h-[280px] object-cover border-4 border-blue-100" />
     </section>
 
-    <!-- ¿POR QUÉ ES IMPORTANTE? -->
     <section class="py-16 px-6 bg-sky-50">
       <h2 class="section-title">💡 ¿Por qué es importante?</h2>
       <div class="max-w-4xl mx-auto text-lg text-slate-700 leading-relaxed bg-white rounded-2xl p-6 shadow-md">
@@ -23,7 +21,6 @@
       </div>
     </section>
 
-    <!-- BENEFICIOS -->
     <section id="beneficios" class="py-16 px-6">
       <h2 class="section-title">✨ Beneficios de la Plataforma</h2>
 
@@ -43,18 +40,16 @@
       </div>
     </section>
 
-    <!-- ¿CÓMO FUNCIONA? -->
     <section class="py-16 px-6 bg-slate-100">
       <h2 class="section-title">🛠️ ¿Cómo funciona?</h2>
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 text-left text-lg text-slate-700">
-        <div class="step-card">📘 Paso 1: <strong>Escoge qué aprender</strong><br />Desde el menú superior.</div>
+        <div class="step-card">📘 Paso 1: <strong>Escoge qué aprender HOY</strong><br />Desde el menú superior.</div>
         <div class="step-card">🌐 Paso 2: <strong>Selecciona el idioma</strong><br />Español, Inglés o Aymara.</div>
         <div class="step-card">🎧 Paso 3: <strong>Explora y escucha</strong><br />Con imágenes y sonidos nativos.</div>
         <div class="step-card">🔁 Paso 4: <strong>Repite y refuerza</strong><br />Aprendizaje ilimitado.</div>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="my-16">
       <h3 class="text-xl font-bold mb-4 text-blue-600 font-mono">🎯 ¿Listo para empezar?</h3>
       <p class="mb-6 font-medium text-slate-700">Elige una opción para comenzar tu aventura educativa.</p>
@@ -69,8 +64,9 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
-const router = useRouter()
+// La línea "import { useRouter } from 'vue-router'" ha sido eliminada ya que no se utiliza
+// la constante 'router' en este componente al usar <router-link> directamente en el template.
+// Este es un comentario para probar el CI/CD.
 </script>
 
 <style scoped>
@@ -119,7 +115,7 @@ const router = useRouter()
   border-radius: 1rem;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
   border-left: 5px solid #10b981;
-  margin-bottom: 1.5rem; /* 👈 ESPACIADO CLAVE */
+  margin-bottom: 1.5rem;
 }
 
 .step-card:hover {
