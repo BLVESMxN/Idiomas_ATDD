@@ -66,6 +66,7 @@
 <script setup>
 // La línea "import { useRouter } from 'vue-router'" ha sido eliminada ya que no se utiliza
 // la constante 'router' en este componente al usar <router-link> directamente en el template.
+// Este es un comentario para probar el CI/CD.
 </script>
 
 <style scoped>
