@@ -43,7 +43,7 @@
     <section class="py-16 px-6 bg-slate-100">
       <h2 class="section-title">🛠️ ¿Cómo funciona?</h2>
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 text-left text-lg text-slate-700">
-        <div class="step-card">📘 Paso 1: <strong>Escoge qué aprender</strong><br />Desde el menú superior.</div>
+        <div class="step-card">📘 Paso 1: <strong>Escoge qué aprender HOY</strong><br />Desde el menú superior.</div>
         <div class="step-card">🌐 Paso 2: <strong>Selecciona el idioma</strong><br />Español, Inglés o Aymara.</div>
         <div class="step-card">🎧 Paso 3: <strong>Explora y escucha</strong><br />Con imágenes y sonidos nativos.</div>
         <div class="step-card">🔁 Paso 4: <strong>Repite y refuerza</strong><br />Aprendizaje ilimitado.</div>
