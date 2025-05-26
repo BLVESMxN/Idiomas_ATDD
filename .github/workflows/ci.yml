@@ -1,4 +1,4 @@
-name: Vue CI
+name: Vue CI/CD
 
 on:
   push:
@@ -9,17 +9,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Use Node.js 18
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
       - name: Install dependencies
         run: npm install
-
       - name: Run build
         run: npm run build
+      - name: Run tests
+        run: npm test
+
+      # --- PASO DE DESPLIEGUE A GITHUB PAGES ---
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Asegúrate que esta sea la carpeta de salida de tu build
