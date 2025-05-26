@@ -20,10 +20,3 @@ jobs:
       - name: Run build
         run: npm run build
    
-
-      # --- PASO DE DESPLIEGUE A GITHUB PAGES ---
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Asegúrate que esta sea la carpeta de salida de tu build
