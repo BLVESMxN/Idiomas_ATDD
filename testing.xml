@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AprendoJugandoTestSuite" verbose="1" >
+    <test name="AplicacionVueTests" >
+        <classes>
+            <class name="C:\Users\FerFisX\Desktop\Idiomas_ATDD\src\java\com\aprendojugando\qa\test\AbecedarioTest.java" />
+            <class name="com.aprendojugando.qa.test.NumerosTest" />
+            <class name="com.aprendojugando.qa.test.SeccionesPrincipalesTest" />
+        </classes>
+    </test>
+</suite>
+
