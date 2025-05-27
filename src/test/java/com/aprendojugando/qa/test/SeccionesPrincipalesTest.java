@@ -18,7 +18,7 @@ import java.time.Duration;
 public class SeccionesPrincipalesTest {
 
     private WebDriver driver;
-    private String baseUrl = "http://localhost:5173/"; // Asegúrate de que este sea el puerto correcto
+    private String baseUrl = "http://localhost:5173/";
 
     @BeforeTest
     public void setup() {
@@ -36,51 +36,52 @@ public class SeccionesPrincipalesTest {
     }
 
     @Test
-    public void verificarVisibilidadSeccionesPrincipales() {
-        /**************Preparación de la prueba***********/
-
-        // Paso 1: Navegar a la URL principal de la aplicación
-        driver.get(baseUrl);
-        System.out.println("Paso 1: Navegado a la URL principal: " + baseUrl);
-
-        /**************Lógica de la prueba***************/
+    public void verificarVisibilidadSeccionesPrincipales() throws InterruptedException {
+        System.out.println("\u001B[36m🧪 INICIO DE LA PRUEBA - Secciones Principales\u001B[0m");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-        // Paso 2: Verificar la visibilidad del título principal "Bienvenido a Aprendo Jugando 3L".
+        // Paso 1: Ir al inicio
+        driver.get(baseUrl);
+        System.out.println("✅ Paso 1: Navegado a la URL principal: " + baseUrl);
+        Thread.sleep(1000);
+
+        // Paso 2: Verificar título principal
         WebElement mainTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h1.main-title")));
-        Assert.assertTrue(mainTitle.isDisplayed(), "El título principal 'Bienvenido a Aprendo Jugando 3L' no es visible.");
-        System.out.println("Paso 2: Título principal visible: " + mainTitle.getText());
+        Assert.assertTrue(mainTitle.isDisplayed(), "❌ El título principal no se encuentra visible.");
+        System.out.println("✅ Paso 2: Título principal visible: '" + mainTitle.getText() + "'");
+        Thread.sleep(1000);
 
-        // Paso 3: Desplazarse (scroll) hacia abajo para asegurar la carga de las secciones.
+        // Paso 3: Scroll para cargar secciones
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 800)"); // Scroll hacia abajo 800 pixeles
-        System.out.println("Paso 3: Realizado scroll para cargar secciones.");
+        js.executeScript("window.scrollBy(0, 800)");
+        System.out.println("✅ Paso 3: Realizado scroll para cargar secciones.");
+        Thread.sleep(1000);
 
-        // Paso 4: Verificar la visibilidad del título de la sección "¿Por qué es importante?".
+        // Paso 4: Verificar "¿Por qué es importante?"
         WebElement whyImportantTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//section[contains(@class, 'bg-sky-50')]/h2[contains(text(), '¿Por qué es importante?')]")
         ));
-        Assert.assertTrue(whyImportantTitle.isDisplayed(), "La sección '¿Por qué es importante?' no es visible.");
-        System.out.println("Paso 4: Sección '¿Por qué es importante?' visible.");
+        Assert.assertTrue(whyImportantTitle.isDisplayed(), "❌ No se ve la sección '¿Por qué es importante?'.");
+        System.out.println("✅ Paso 4: Sección visible: '¿Por qué es importante?'");
+        Thread.sleep(1000);
 
-        // Paso 5: Verificar la visibilidad del título de la sección "Beneficios de la Plataforma".
+        // Paso 5: Verificar "Beneficios de la Plataforma"
         WebElement benefitsTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//section[@id='beneficios']/h2[contains(text(), 'Beneficios de la Plataforma')]")
         ));
-        Assert.assertTrue(benefitsTitle.isDisplayed(), "La sección 'Beneficios de la Plataforma' no es visible.");
-        System.out.println("Paso 5: Sección 'Beneficios de la Plataforma' visible.");
+        Assert.assertTrue(benefitsTitle.isDisplayed(), "❌ No se ve la sección 'Beneficios de la Plataforma'.");
+        System.out.println("✅ Paso 5: Sección visible: 'Beneficios de la Plataforma'");
+        Thread.sleep(1000);
 
-        // Paso 6: Verificar la visibilidad del título de la sección "¿Cómo funciona?".
+        // Paso 6: Verificar "¿Cómo funciona?"
         WebElement howItWorksTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//section[contains(@class, 'bg-slate-100')]/h2[contains(text(), '¿Cómo funciona?')]")
         ));
-        Assert.assertTrue(howItWorksTitle.isDisplayed(), "La sección '¿Cómo funciona?' no es visible.");
-        System.out.println("Paso 6: Sección '¿Cómo funciona?' visible.");
+        Assert.assertTrue(howItWorksTitle.isDisplayed(), "❌ No se ve la sección '¿Cómo funciona?'.");
+        System.out.println("✅ Paso 6: Sección visible: '¿Cómo funciona?'");
 
-        /************Verificación de la situación esperada - Assert***************/
-        // Los asserts ya están incluidos en cada paso de verificación.
-        // Se puede añadir un assert final si se desea, pero los intermedios son suficientes para la rúbrica.
-        Assert.assertTrue(true, "Todas las secciones principales fueron verificadas."); // Assert de confirmación final
+        // Confirmación final
+        System.out.println("🎉 Todas las secciones principales están correctamente visibles.");
     }
 }
